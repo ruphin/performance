@@ -1,0 +1,21 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/my-app.html",
+  "fragments": [],
+  "sources": ["images/**/*", "src/**/*"],
+  "lint": {
+    "rules": ["polymer-2"]
+  },
+  "builds": [
+    {
+      "preset": "es5-bundled",
+      "addServiceWorker": false,
+      "basePath": "/polymer-paper-ie"
+    },
+    {
+      "preset": "es6-bundled",
+      "addServiceWorker": false,
+      "basePath": "/polymer-paper-modern"
+    }
+  ]
+}

@@ -1,29 +1,46 @@
 {
-  "name": "performance-challenge",
+  "name": "performance-benchmark",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server.js",
-    "lighthouse": "lighthouse http://localhost:3000 --output json --output html --output-path ./reports/lighthouse.out --view"
+    "build": "npm run build:bower && npm run build:polymer && npm run build:polymer-paper && npm run build:webcomponents",
+    "build:webcomponents": "cd webcomponents && rollup -c",
+    "build:bower": "bower install && echo '' > bower_components/font-roboto/roboto.html",
+    "build:polymer": "cd polymer && polymer build",
+    "build:polymer-paper": "cd polymer-paper && polymer build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flock-se/performance-challenge.git"
+    "url": "git+https://github.com/ruphin/performance"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/flock-se/performance-challenge/issues"
+    "url": "https://github.com/ruphin/performance/issues"
   },
-  "homepage": "https://github.com/flock-se/performance-challenge#readme",
+  "homepage": "https://github.com/ruphin/performance#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "boomerangjs": "^1.0.1",
-    "compression": "^1.7.2",
-    "cors": "^2.8.4",
-    "express": "^4.16.3",
-    "lighthouse": "^2.9.4"
+    "gluonjs": "ie",
+    "@webcomponents/webcomponentsjs": "1.2.0"
+  },
+  "devDependencies": {
+    "bower": "1.8.4",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "polymer-cli": "1.6.0",
+    "express": "4.16.3",
+    "compression": "1.7.2",
+    "cors": "2.8.4",
+    "body-parser": "1.18.2",
+    "connect-history-api-fallback": "^1.5.0",
+    "rollup": "^0.56.4",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-filesize": "^1.5.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-paths": "0.0.3",
+    "rollup-plugin-uglify": "^3.0.0"
   }
 }

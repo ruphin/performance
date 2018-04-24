@@ -1,0 +1,28 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/my-app.html",
+  "fragments": [],
+  "sources": ["images/**/*", "src/**/*", "bootstrap.min.css"],
+  "lint": {
+    "rules": ["polymer-2"]
+  },
+  "extraDependencies": ["bootstrap.min.css", "fetch.js"],
+  "builds": [
+    {
+      "preset": "es5-bundled",
+      "addServiceWorker": false,
+      "basePath": "/polymer-ie",
+      "bundle": {
+        "inlineCSS": "false"
+      }
+    },
+    {
+      "preset": "es6-bundled",
+      "addServiceWorker": false,
+      "basePath": "/polymer-modern",
+      "bundle": {
+        "inlineCSS": "false"
+      }
+    }
+  ]
+}
