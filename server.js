@@ -43,7 +43,7 @@ app.use('/api', bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/status', (req, res) => {
   const messageNumber = Math.floor(Math.random() * 4);
-  return setTimeout(() => res.send(messages[messageNumber]), 200);
+  return setTimeout(() => res.send(messages[messageNumber]), 2000);
 });
 
 app.post('/api/login', (req, res) => {
