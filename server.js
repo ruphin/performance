@@ -30,6 +30,8 @@ app.use(cors());
 
 app.use(compression());
 
+app.get(['/', '/index.html'], (rer, res) => res.sendFile(__dirname + '/index.html'));
+
 app.use('/jQuery', express.static('jQuery'));
 app.use('/polymer-paper-ie', express.static('polymer-paper/build/es5-bundled'));
 app.use('/polymer-paper-modern', express.static('polymer-paper/build/es6-bundled'));
