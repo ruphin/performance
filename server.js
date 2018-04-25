@@ -3,7 +3,7 @@ const compression = require('compression');
 const bodyParser = require('body-parser');
 var cors = require('cors');
 
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT || 5000;
 
 const messages = [
   {

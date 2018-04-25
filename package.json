@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server.js",
+    "start": "npm run build && node ./server.js",
+    "dev": "node ./server.js",
     "build": "npm run build:bower && npm run build:polymer && npm run build:polymer-paper && npm run build:webcomponents",
     "build:webcomponents": "cd webcomponents && rollup -c",
     "build:bower": "bower install && echo '' > bower_components/font-roboto/roboto.html",
