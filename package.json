@@ -1,16 +1,14 @@
 {
   "name": "performance-benchmark",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "npm run build && node ./server.js",
-    "dev": "node ./server.js",
-    "build": "npm run build:bower && npm run build:polymer && npm run build:polymer-paper && npm run build:webcomponents",
-    "build:webcomponents": "cd webcomponents && rollup -c",
-    "build:bower": "bower install && echo '' > bower_components/font-roboto/roboto.html",
-    "build:polymer": "cd polymer && polymer build",
-    "build:polymer-paper": "cd polymer-paper && polymer build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite preview --host --port ${PORT:-5000} --strictPort"
   },
   "repository": {
     "type": "git",
@@ -23,25 +21,13 @@
   },
   "homepage": "https://github.com/ruphin/performance#readme",
   "dependencies": {
-    "gluonjs": "ie",
-    "@webcomponents/webcomponentsjs": "1.2.0"
+    "@webcomponents/webcomponentsjs": "1.2.0",
+    "gluonjs": "ie"
   },
   "devDependencies": {
-    "bower": "1.8.4",
-    "babel-core": "^6.26.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
-    "polymer-cli": "1.6.0",
-    "express": "4.16.3",
-    "compression": "1.7.2",
-    "cors": "2.8.4",
-    "body-parser": "1.18.2",
-    "connect-history-api-fallback": "^1.5.0",
-    "rollup": "^0.56.4",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-filesize": "^1.5.0",
-    "rollup-plugin-node-resolve": "^3.0.3",
-    "rollup-plugin-paths": "0.0.3",
-    "rollup-plugin-uglify": "^3.0.0"
+    "@vitejs/plugin-legacy": "^8.2.3",
+    "sirv": "^3.0.2",
+    "terser": "^5.51.2",
+    "vite": "^8.3.3"
   }
 }
